@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D9E3EE62153C213000C518A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E3EE52153C213000C518A /* AppDelegate.swift */; };
+		8D9E3EE82153C213000C518A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E3EE72153C213000C518A /* ViewController.swift */; };
+		8D9E3EEB2153C213000C518A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E3EE92153C213000C518A /* Main.storyboard */; };
+		8D9E3EEE2153C213000C518A /* TheFlowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E3EEC2153C213000C518A /* TheFlowApp.xcdatamodeld */; };
+		8D9E3EF02153C215000C518A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E3EEF2153C215000C518A /* Assets.xcassets */; };
+		8D9E3EF32153C215000C518A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D9E3EF12153C215000C518A /* LaunchScreen.storyboard */; };
+		8D9E3EFE2153C215000C518A /* TheFlowAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E3EFD2153C215000C518A /* TheFlowAppTests.swift */; };
+		8D9E3F092153C215000C518A /* TheFlowAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9E3F082153C215000C518A /* TheFlowAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D9E3EFA2153C215000C518A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D9E3EDA2153C213000C518A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D9E3EE12153C213000C518A;
+			remoteInfo = TheFlowApp;
+		};
+		8D9E3F052153C215000C518A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D9E3EDA2153C213000C518A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D9E3EE12153C213000C518A;
+			remoteInfo = TheFlowApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8D9E3EE22153C213000C518A /* TheFlowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFlowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D9E3EE52153C213000C518A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8D9E3EE72153C213000C518A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D9E3EEA2153C213000C518A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8D9E3EED2153C213000C518A /* TheFlowApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheFlowApp.xcdatamodel; sourceTree = "<group>"; };
+		8D9E3EEF2153C215000C518A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D9E3EF22153C215000C518A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D9E3EF42153C215000C518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D9E3EF92153C215000C518A /* TheFlowAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheFlowAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D9E3EFD2153C215000C518A /* TheFlowAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFlowAppTests.swift; sourceTree = "<group>"; };
+		8D9E3EFF2153C215000C518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D9E3F042153C215000C518A /* TheFlowAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheFlowAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D9E3F082153C215000C518A /* TheFlowAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheFlowAppUITests.swift; sourceTree = "<group>"; };
+		8D9E3F0A2153C215000C518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D9E3EDF2153C213000C518A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3EF62153C215000C518A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3F012153C215000C518A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8D9E3ED92153C213000C518A = {
+			isa = PBXGroup;
+			children = (
+				8D9E3EE42153C213000C518A /* TheFlowApp */,
+				8D9E3EFC2153C215000C518A /* TheFlowAppTests */,
+				8D9E3F072153C215000C518A /* TheFlowAppUITests */,
+				8D9E3EE32153C213000C518A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8D9E3EE32153C213000C518A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E3EE22153C213000C518A /* TheFlowApp.app */,
+				8D9E3EF92153C215000C518A /* TheFlowAppTests.xctest */,
+				8D9E3F042153C215000C518A /* TheFlowAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8D9E3EE42153C213000C518A /* TheFlowApp */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E3EE52153C213000C518A /* AppDelegate.swift */,
+				8D9E3EE72153C213000C518A /* ViewController.swift */,
+				8D9E3EE92153C213000C518A /* Main.storyboard */,
+				8D9E3EEF2153C215000C518A /* Assets.xcassets */,
+				8D9E3EF12153C215000C518A /* LaunchScreen.storyboard */,
+				8D9E3EF42153C215000C518A /* Info.plist */,
+				8D9E3EEC2153C213000C518A /* TheFlowApp.xcdatamodeld */,
+			);
+			path = TheFlowApp;
+			sourceTree = "<group>";
+		};
+		8D9E3EFC2153C215000C518A /* TheFlowAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E3EFD2153C215000C518A /* TheFlowAppTests.swift */,
+				8D9E3EFF2153C215000C518A /* Info.plist */,
+			);
+			path = TheFlowAppTests;
+			sourceTree = "<group>";
+		};
+		8D9E3F072153C215000C518A /* TheFlowAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8D9E3F082153C215000C518A /* TheFlowAppUITests.swift */,
+				8D9E3F0A2153C215000C518A /* Info.plist */,
+			);
+			path = TheFlowAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D9E3EE12153C213000C518A /* TheFlowApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D9E3F0D2153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowApp" */;
+			buildPhases = (
+				8D9E3EDE2153C213000C518A /* Sources */,
+				8D9E3EDF2153C213000C518A /* Frameworks */,
+				8D9E3EE02153C213000C518A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheFlowApp;
+			productName = TheFlowApp;
+			productReference = 8D9E3EE22153C213000C518A /* TheFlowApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D9E3EF82153C215000C518A /* TheFlowAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D9E3F102153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowAppTests" */;
+			buildPhases = (
+				8D9E3EF52153C215000C518A /* Sources */,
+				8D9E3EF62153C215000C518A /* Frameworks */,
+				8D9E3EF72153C215000C518A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D9E3EFB2153C215000C518A /* PBXTargetDependency */,
+			);
+			name = TheFlowAppTests;
+			productName = TheFlowAppTests;
+			productReference = 8D9E3EF92153C215000C518A /* TheFlowAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8D9E3F032153C215000C518A /* TheFlowAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D9E3F132153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowAppUITests" */;
+			buildPhases = (
+				8D9E3F002153C215000C518A /* Sources */,
+				8D9E3F012153C215000C518A /* Frameworks */,
+				8D9E3F022153C215000C518A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D9E3F062153C215000C518A /* PBXTargetDependency */,
+			);
+			name = TheFlowAppUITests;
+			productName = TheFlowAppUITests;
+			productReference = 8D9E3F042153C215000C518A /* TheFlowAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D9E3EDA2153C213000C518A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = user143555;
+				TargetAttributes = {
+					8D9E3EE12153C213000C518A = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					8D9E3EF82153C215000C518A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 8D9E3EE12153C213000C518A;
+					};
+					8D9E3F032153C215000C518A = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 8D9E3EE12153C213000C518A;
+					};
+				};
+			};
+			buildConfigurationList = 8D9E3EDD2153C213000C518A /* Build configuration list for PBXProject "TheFlowApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8D9E3ED92153C213000C518A;
+			productRefGroup = 8D9E3EE32153C213000C518A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D9E3EE12153C213000C518A /* TheFlowApp */,
+				8D9E3EF82153C215000C518A /* TheFlowAppTests */,
+				8D9E3F032153C215000C518A /* TheFlowAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D9E3EE02153C213000C518A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9E3EF32153C215000C518A /* LaunchScreen.storyboard in Resources */,
+				8D9E3EF02153C215000C518A /* Assets.xcassets in Resources */,
+				8D9E3EEB2153C213000C518A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3EF72153C215000C518A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3F022153C215000C518A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D9E3EDE2153C213000C518A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9E3EE82153C213000C518A /* ViewController.swift in Sources */,
+				8D9E3EE62153C213000C518A /* AppDelegate.swift in Sources */,
+				8D9E3EEE2153C213000C518A /* TheFlowApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3EF52153C215000C518A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9E3EFE2153C215000C518A /* TheFlowAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D9E3F002153C215000C518A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D9E3F092153C215000C518A /* TheFlowAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D9E3EFB2153C215000C518A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D9E3EE12153C213000C518A /* TheFlowApp */;
+			targetProxy = 8D9E3EFA2153C215000C518A /* PBXContainerItemProxy */;
+		};
+		8D9E3F062153C215000C518A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D9E3EE12153C213000C518A /* TheFlowApp */;
+			targetProxy = 8D9E3F052153C215000C518A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8D9E3EE92153C213000C518A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D9E3EEA2153C213000C518A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8D9E3EF12153C215000C518A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D9E3EF22153C215000C518A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8D9E3F0B2153C215000C518A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8D9E3F0C2153C215000C518A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8D9E3F0E2153C215000C518A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8D9E3F0F2153C215000C518A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D9E3F112153C215000C518A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheFlowApp.app/TheFlowApp";
+			};
+			name = Debug;
+		};
+		8D9E3F122153C215000C518A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheFlowApp.app/TheFlowApp";
+			};
+			name = Release;
+		};
+		8D9E3F142153C215000C518A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheFlowApp;
+			};
+			name = Debug;
+		};
+		8D9E3F152153C215000C518A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TheFlowAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFlowAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheFlowApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D9E3EDD2153C213000C518A /* Build configuration list for PBXProject "TheFlowApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D9E3F0B2153C215000C518A /* Debug */,
+				8D9E3F0C2153C215000C518A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D9E3F0D2153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D9E3F0E2153C215000C518A /* Debug */,
+				8D9E3F0F2153C215000C518A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D9E3F102153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D9E3F112153C215000C518A /* Debug */,
+				8D9E3F122153C215000C518A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D9E3F132153C215000C518A /* Build configuration list for PBXNativeTarget "TheFlowAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D9E3F142153C215000C518A /* Debug */,
+				8D9E3F152153C215000C518A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D9E3EEC2153C213000C518A /* TheFlowApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D9E3EED2153C213000C518A /* TheFlowApp.xcdatamodel */,
+			);
+			currentVersion = 8D9E3EED2153C213000C518A /* TheFlowApp.xcdatamodel */;
+			path = TheFlowApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8D9E3EDA2153C213000C518A /* Project object */;
+}
