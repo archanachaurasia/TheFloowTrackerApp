@@ -11,6 +11,10 @@
 		B8A9C1FD214E3E16008CA417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A9C1FB214E3E16008CA417 /* Main.storyboard */; };
 		B8A9C1FF214E3E17008CA417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A9C1FE214E3E17008CA417 /* Assets.xcassets */; };
 		B8A9C202214E3E17008CA417 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A9C200214E3E17008CA417 /* LaunchScreen.storyboard */; };
+		B8A9C21A214E7D9E008CA417 /* UserJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A9C219214E7D9E008CA417 /* UserJourney.swift */; };
+		B8A9C21D214E88EC008CA417 /* TheFloowApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8A9C21B214E88EC008CA417 /* TheFloowApp.xcdatamodeld */; };
+		B8F623FF214EC7C2005CEBDF /* JourneyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F623FE214EC7C2005CEBDF /* JourneyListViewController.swift */; };
+		B8F62402214EC7F9005CEBDF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F62401214EC7F9005CEBDF /* DashboardViewController.swift */; };
 		D2B97F9AFF8E49F0146ED875 /* Pods_TheFloowApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDD4543AD81CBB875A1E4B2 /* Pods_TheFloowApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,10 @@
 		B8A9C1FE214E3E17008CA417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8A9C201214E3E17008CA417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8A9C203214E3E17008CA417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8A9C219214E7D9E008CA417 /* UserJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJourney.swift; sourceTree = "<group>"; };
+		B8A9C21C214E88EC008CA417 /* TheFloowApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheFloowApp.xcdatamodel; sourceTree = "<group>"; };
+		B8F623FE214EC7C2005CEBDF /* JourneyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListViewController.swift; sourceTree = "<group>"; };
+		B8F62401214EC7F9005CEBDF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D051F5E7B0F66C46C9BCB963 /* Pods-TheFloowApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFloowApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheFloowApp/Pods-TheFloowApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,13 +84,25 @@
 		B8A9C1F6214E3E16008CA417 /* TheFloowApp */ = {
 			isa = PBXGroup;
 			children = (
+				B8F62400214EC7D7005CEBDF /* ViewControllers */,
 				B8A9C1F7214E3E16008CA417 /* AppDelegate.swift */,
+				B8A9C219214E7D9E008CA417 /* UserJourney.swift */,
 				B8A9C1FB214E3E16008CA417 /* Main.storyboard */,
 				B8A9C1FE214E3E17008CA417 /* Assets.xcassets */,
 				B8A9C200214E3E17008CA417 /* LaunchScreen.storyboard */,
 				B8A9C203214E3E17008CA417 /* Info.plist */,
+				B8A9C21B214E88EC008CA417 /* TheFloowApp.xcdatamodeld */,
 			);
 			path = TheFloowApp;
+			sourceTree = "<group>";
+		};
+		B8F62400214EC7D7005CEBDF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8F62401214EC7F9005CEBDF /* DashboardViewController.swift */,
+				B8F623FE214EC7C2005CEBDF /* JourneyListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A9C21A214E7D9E008CA417 /* UserJourney.swift in Sources */,
+				B8F62402214EC7F9005CEBDF /* DashboardViewController.swift in Sources */,
+				B8A9C21D214E88EC008CA417 /* TheFloowApp.xcdatamodeld in Sources */,
 				B8A9C1F8214E3E16008CA417 /* AppDelegate.swift in Sources */,
+				B8F623FF214EC7C2005CEBDF /* JourneyListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +440,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B8A9C21B214E88EC008CA417 /* TheFloowApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B8A9C21C214E88EC008CA417 /* TheFloowApp.xcdatamodel */,
+			);
+			currentVersion = B8A9C21C214E88EC008CA417 /* TheFloowApp.xcdatamodel */;
+			path = TheFloowApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B8A9C1EC214E3E16008CA417 /* Project object */;
 }
