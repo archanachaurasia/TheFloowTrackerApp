@@ -46,9 +46,22 @@ class JourneyListViewController: UIViewController, UITableViewDelegate, UITableV
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "JourneyListCell")!
+    cell.textLabel?.numberOfLines=0
+    cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 
     let journey = arrJourneys?[indexPath.row]
-    cell.textLabel?.text = "Journey started on \(String(describing: journey?.startDate))!"
+    
+    let dateFormatterGet = DateFormatter()
+    dateFormatterGet.dateFormat = "yyyy-MM-dd"
+    let startDate: String? = dateFormatterGet.string(from: (journey?.startDate)!)
+    let endDate: String? = dateFormatterGet.string(from: (journey?.endDate)!)
+    
+    dateFormatterGet.dateFormat = "HH:mm:ss"
+    let startTime: String? = dateFormatterGet.string(from: (journey?.startDate)!)
+    let endTime: String? = dateFormatterGet.string(from: (journey?.endDate)!)
+
+    
+    cell.textLabel?.text = "Journey started on \(String(describing: startDate!)) at \(String(describing: startTime!)) Journey ended on \(String(describing: endDate!)) at \(String(describing: endTime!))"
     return cell
   }
 
