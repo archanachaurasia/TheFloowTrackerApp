@@ -12,18 +12,17 @@ import GoogleMaps
 import Toast_Swift
 import CoreData
 
-class DashboardViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class DashboardViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UserJourneyDelegate {
 
   struct Constants {
     static let JourneyListSegue = "showJourneyListVC"
-    static let mapCameraZoom :Float = 17.0; //google map level
-    static let googleMapApiKey = "AIzaSyDSL3C3kbaXKheOcnojgsDXAYNtJrYxDkQ" //generate key on google map via login
+    static let mapCameraZoom :Float = 17.0;
+    static let googleMapApiKey = "AIzaSyDSL3C3kbaXKheOcnojgsDXAYNtJrYxDkQ"
   }
 
   var locationManager: CLLocationManager!
-  var lastKnownLocation: CLLocation?
+  var lastKnownLocation: CLLocationCoordinate2D?
   var mapView: GMSMapView!
-  let path = GMSMutablePath()
   var currentJourney: UserJourney?
 
   override func viewDidLoad() {
@@ -32,53 +31,49 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, GMSM
 
     self.title = NSLocalizedString("The Floow App", comment: "main view title (app name)")
 
-    currentJourney = UserJourney() //initialization
-
-    GMSServices.provideAPIKey(Constants.googleMapApiKey) // map settings/configuration
+    currentJourney = UserJourney(withDelegate: self)
+    
+    GMSServices.provideAPIKey(Constants.googleMapApiKey)
 
     let camera = GMSCameraPosition.camera(
-      withLatitude: 38.8879, //default location on launch
+      withLatitude: 38.8879,
       longitude: -77.0200,
       zoom: Constants.mapCameraZoom
     )
 
     mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-    mapView.settings.myLocationButton = true //map settingsß
+    mapView.settings.myLocationButton = true
     mapView.settings.indoorPicker = false
     mapView.isMyLocationEnabled = true
     mapView.delegate = self
     self.view = mapView;
 
-    if !CLLocationManager.locationServicesEnabled() {
-      print("Please enable location services")
-      self.view.makeToast(NSLocalizedString("Please enable location services from privacy settings", comment: ""))
-      return
-    }
+    let manager = DashboardManager()
 
-    if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied {
-      print("Please authorize location services")
-      self.view.makeToast(NSLocalizedString("Please enable location services for App", comment: ""))
-      return
-    }
+    let (permission, message) = manager.checkIfLocationPermissionAvailable()
 
     locationManager = CLLocationManager()
-    if (locationManager.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization))) {
-      locationManager.requestAlwaysAuthorization()
-    }
-    locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
-    locationManager.startUpdatingLocation()
 
+    if permission {
+      locationManager.delegate = self
+      locationManager.desiredAccuracy = kCLLocationAccuracyBest
+      locationManager.startUpdatingLocation()
+    } else {
+      if (locationManager.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization))) {
+        locationManager.requestAlwaysAuthorization()
+      }
+      self.view.makeToast(message)
+    }
   }
 
   @IBAction func switchValueDidChange(_ sender: UISwitch) {
     if sender.isOn {
       print("Location Tracking ON")
-      currentJourney = UserJourney()
+      currentJourney = UserJourney(withDelegate: self)
       locationManager.startUpdatingLocation()
     } else{
       print("Location Tracking OFF")
-      saveUserJourney(lastJourney: currentJourney!)
+      DashboardManager().saveUserJourney(lastJourney: currentJourney!)
       currentJourney = nil
       lastKnownLocation = nil
       locationManager.stopUpdatingLocation()
@@ -86,52 +81,12 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, GMSM
   }
 
   @IBAction func showListBtnPressed(_ sender: UIButton) {
-
     performSegue(withIdentifier: Constants.JourneyListSegue, sender: self)
-  }
-
-  func loadLastJourney() {
-
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-      return
-    }
-
-    let managedContext = appDelegate.persistentContainer.viewContext
-
-    var journeys  = [Journey]()
-
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Journey")
-    journeys = try! managedContext.fetch(fetchRequest) as! [Journey]
-
-    // Then you can use your properties.
-
-    guard let userJourney = journeys.last else {
-      print("current location not found")
-      return;
-    }
-
-    let userPath = GMSMutablePath()
-
-    let allPaths: [Location] = userJourney.path?.allObjects as! [Location]
-
-    for location in allPaths {
-      let coordinate = CLLocationCoordinate2D(latitude: location.lattitude, longitude: location.longitude)
-      userPath.add(coordinate)
-    }
-    let route = GMSPolyline(path: userPath)
-    route.map = mapView
   }
 
   // MARK: - CLLocation Delgates
 
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-
-    if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied {
-      print("Please authorize location services")
-      self.view.makeToast(NSLocalizedString("Please enable location services", comment: ""))
-      return
-    }
-
     self.view.makeToast(NSLocalizedString("Could not determine location at the moment", comment: ""))
     print("CLLocationManager error: \(error.localizedDescription)")
   }
@@ -148,80 +103,26 @@ class DashboardViewController: UIViewController, CLLocationManagerDelegate, GMSM
       let move = GMSCameraUpdate.setTarget(currentLocation.coordinate, zoom: Constants.mapCameraZoom)
       mapView.animate(with: move)
 
-      lastKnownLocation = currentLocation
-        currentJourney?.path.append(currentLocation.coordinate)
-    }
-    else {
-      guard let lastLocation = lastKnownLocation else {
-        print("Last location not found")
-        return;
-      }
-      // Forming GMSPath from User's last location to User's current location.
-      let path = GMSMutablePath()
-      path.add(lastLocation.coordinate)
-      path.add(currentLocation.coordinate)
-
-      let polyLine = GMSPolyline(path: path)
-      polyLine.strokeWidth = 5.0;
-      polyLine.map = mapView
-      // Saving current loc as last known loc,so that we can draw another GMSPolyline from last location to current location when you recieved another callback for this method.
-      lastKnownLocation = currentLocation;
-      currentJourney?.path.append(currentLocation.coordinate)
+      lastKnownLocation = currentLocation.coordinate
     }
 
-    // Draw as a single polyline.
-    //    guard let currentLocation = locations.last else {
-    //      print("current location not found")
-    //      return;
-    //    }
-    //
-    //    path.add(currentLocation.coordinate)
-    //
-    //    let route = GMSPolyline(path: path)
-    //    route.map = mapView
-
+    currentJourney?.path.append(currentLocation.coordinate)
   }
 
-  func saveUserJourney(lastJourney: UserJourney) {
+  // MARK: - UserJourney Delgate
 
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-      return
-    }
+  func userDidMove(toLocation currentLocation: CLLocationCoordinate2D) {
 
-    let managedContext = appDelegate.persistentContainer.viewContext
+    guard let lastLocation = lastKnownLocation else { return }
+    // Forming GMSPath from User's last location to User's current location.
+    let path = GMSMutablePath()
+    path.add(lastLocation)
+    path.add(currentLocation)
 
-    let entity = NSEntityDescription.entity(
-      forEntityName: "Journey",
-      in: managedContext)!
-
-    let journeyToSave = NSManagedObject(
-      entity: entity,
-      insertInto: managedContext
-      ) as! Journey
-
-    let pathEntity = NSEntityDescription.entity(
-      forEntityName: "Location",
-      in: managedContext)!
-
-    for location in lastJourney.path {
-
-      let path = NSManagedObject(
-        entity: pathEntity,
-        insertInto: managedContext
-        ) as! Location //type cast
-
-      path.lattitude = location.latitude
-      path.longitude = location.longitude
-      journeyToSave.addToPath(path)
-    }
-
-    journeyToSave.startDate = lastJourney.startDate
-    journeyToSave.endDate = Date()
-
-    do {
-      try managedContext.save()
-    } catch let error as NSError {
-      print("Could not save. \(error), \(error.userInfo)")
-    }
+    let polyLine = GMSPolyline(path: path)
+    polyLine.strokeWidth = 5.0;
+    polyLine.map = mapView
+    // Saving current loc as last known loc,so that we can draw another GMSPolyline from last location to current location when you recieved another callback for this method.
+    lastKnownLocation = currentLocation;
   }
 }

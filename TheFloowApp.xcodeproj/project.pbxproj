@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83AC1C421559ECF0033D4E3 /* DashboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AC1C321559ECF0033D4E3 /* DashboardManager.swift */; };
+		B83AC1C62155A42B0033D4E3 /* JourneyListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83AC1C52155A42B0033D4E3 /* JourneyListManager.swift */; };
 		B8A9C1F8214E3E16008CA417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A9C1F7214E3E16008CA417 /* AppDelegate.swift */; };
 		B8A9C1FD214E3E16008CA417 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A9C1FB214E3E16008CA417 /* Main.storyboard */; };
 		B8A9C1FF214E3E17008CA417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A9C1FE214E3E17008CA417 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		96814194D97110BE469E9631 /* Pods-TheFloowApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFloowApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheFloowApp/Pods-TheFloowApp.release.xcconfig"; sourceTree = "<group>"; };
 		9BDD4543AD81CBB875A1E4B2 /* Pods_TheFloowApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheFloowApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B83AC1C321559ECF0033D4E3 /* DashboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardManager.swift; sourceTree = "<group>"; };
+		B83AC1C52155A42B0033D4E3 /* JourneyListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyListManager.swift; sourceTree = "<group>"; };
 		B8A9C1F4214E3E16008CA417 /* TheFloowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFloowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A9C1F7214E3E16008CA417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A9C1FC214E3E16008CA417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B83AC1C121559E950033D4E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B8A9C219214E7D9E008CA417 /* UserJourney.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B83AC1C221559EA80033D4E3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B83AC1C321559ECF0033D4E3 /* DashboardManager.swift */,
+				B83AC1C52155A42B0033D4E3 /* JourneyListManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B8A9C1EB214E3E16008CA417 = {
 			isa = PBXGroup;
 			children = (
@@ -84,9 +105,10 @@
 		B8A9C1F6214E3E16008CA417 /* TheFloowApp */ = {
 			isa = PBXGroup;
 			children = (
+				B83AC1C221559EA80033D4E3 /* Managers */,
+				B83AC1C121559E950033D4E3 /* Models */,
 				B8F62400214EC7D7005CEBDF /* ViewControllers */,
 				B8A9C1F7214E3E16008CA417 /* AppDelegate.swift */,
-				B8A9C219214E7D9E008CA417 /* UserJourney.swift */,
 				B8A9C1FB214E3E16008CA417 /* Main.storyboard */,
 				B8A9C1FE214E3E17008CA417 /* Assets.xcassets */,
 				B8A9C200214E3E17008CA417 /* LaunchScreen.storyboard */,
@@ -238,9 +260,11 @@
 			files = (
 				B8A9C21A214E7D9E008CA417 /* UserJourney.swift in Sources */,
 				B8F62402214EC7F9005CEBDF /* DashboardViewController.swift in Sources */,
+				B83AC1C421559ECF0033D4E3 /* DashboardManager.swift in Sources */,
 				B8A9C21D214E88EC008CA417 /* TheFloowApp.xcdatamodeld in Sources */,
 				B8A9C1F8214E3E16008CA417 /* AppDelegate.swift in Sources */,
 				B8F623FF214EC7C2005CEBDF /* JourneyListViewController.swift in Sources */,
+				B83AC1C62155A42B0033D4E3 /* JourneyListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,13 +410,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 855T5P928B;
+				DEVELOPMENT_TEAM = CA2KSK5YXF;
 				INFOPLIST_FILE = TheFloowApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFloowApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Archana.TheFloowApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,13 +430,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 855T5P928B;
+				DEVELOPMENT_TEAM = CA2KSK5YXF;
 				INFOPLIST_FILE = TheFloowApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trackerplex.TheFloowApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Archana.TheFloowApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

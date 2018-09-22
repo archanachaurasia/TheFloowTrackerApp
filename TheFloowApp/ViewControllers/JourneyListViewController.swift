@@ -19,19 +19,8 @@ class JourneyListViewController: UIViewController, UITableViewDelegate, UITableV
       super.viewDidLoad()
 
       // Do any additional setup after loading the view.
-    loadAllJourneys()
-  }
 
-  func loadAllJourneys() {
-
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-      return
-    }
-
-    let managedContext = appDelegate.persistentContainer.viewContext
-
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Journey")
-    arrJourneys = try! managedContext.fetch(fetchRequest) as! [Journey]
+    arrJourneys = JourneyListManager().fetchAllJourneys()
     tableView.reloadData()
   }
 
@@ -44,26 +33,26 @@ class JourneyListViewController: UIViewController, UITableViewDelegate, UITableV
     return count
   }
 
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "JourneyListCell")!
-    cell.textLabel?.numberOfLines=0
-    cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-
-    let journey = arrJourneys?[indexPath.row]
-    
-    let dateFormatterGet = DateFormatter()
-    dateFormatterGet.dateFormat = "yyyy-MM-dd"
-    let startDate: String? = dateFormatterGet.string(from: (journey?.startDate)!)
-    let endDate: String? = dateFormatterGet.string(from: (journey?.endDate)!)
-    
-    dateFormatterGet.dateFormat = "HH:mm:ss"
-    let startTime: String? = dateFormatterGet.string(from: (journey?.startDate)!)
-    let endTime: String? = dateFormatterGet.string(from: (journey?.endDate)!)
-
-    
-    cell.textLabel?.text = "Journey started on \(String(describing: startDate!)) at \(String(describing: startTime!)) Journey ended on \(String(describing: endDate!)) at \(String(describing: endTime!))"
-    return cell
-  }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "JourneyListCell")!
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        let journey = arrJourneys?[indexPath.row]
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        let startDate: String? = dateFormatterGet.string(from: (journey?.startDate)!)
+        let endDate: String? = dateFormatterGet.string(from: (journey?.endDate)!)
+        
+        dateFormatterGet.dateFormat = "HH:mm:ss"
+        let startTime: String? = dateFormatterGet.string(from: (journey?.startDate)!)
+        let endTime: String? = dateFormatterGet.string(from: (journey?.endDate)!)
+        
+        
+        cell.textLabel?.text = "Journey started on \(String(describing: startDate!)) at \(String(describing: startTime!)) Journey ended on \(String(describing: endDate!)) at \(String(describing: endTime!))"
+        return cell
+    }
 
   // MARK: -  TableView Delegate
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
